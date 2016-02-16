@@ -600,7 +600,10 @@ class EngTagger
   # in preparation for tagging
   def clean_text(text)
     return false unless valid_text(text)
+    p "-------"
+    p text
     text = text.encode('utf8')
+    p text
     unless $no_hpricot
       # Strip out any markup and convert entities to their proper form
       cleaned_text = Hpricot(text).inner_text
